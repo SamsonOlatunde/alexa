@@ -1,0 +1,53 @@
+{% load static %}
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <title>Sentiment Analysis</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Alexa Sentiment Analysis</a>
+
+  </div>
+</nav>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h4>Alexa Sentiment Analysis</h4>
+                    <small>This Is NLP-Based Classification Task with 85% accuracy using Support Vector Machine</small>
+                    <hr>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <input type="text" class="form-control mb-2" placeholder="Enter your sentiment:" name="title" required>
+                        <button type="submit" class="btn btn-info btn-sm">Analyse</button>
+
+                    </form>
+                    <hr>
+
+                    <h3>{{predict}}</h3>
+
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+    </div>
+
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
